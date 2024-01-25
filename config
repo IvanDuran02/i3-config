@@ -24,6 +24,10 @@ font pango: JetBrainsMono Nerd Font, DejaVu Sans Mono 8
 # head 0 and head 1 being display 0 and 1 for dual monitors
 exec --no-startup-id nitrogen --set-scaled /home/popo/Pictures/bamboo_girl.jpg --head=0 && nitrogen --set-scaled /home/popo/Pictures/bamboo_girl.jpg --head=1
 
+# Start dunst for notifications on startup
+exec dunst
+
+exec pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2 
 # Startup picom to help with transparency in i3
 exec --no-startup-id picom
 
@@ -198,8 +202,8 @@ default_border pixel 0
 default_floating_border pixel 0
 
 # total of 10px gap
-gaps inner 5px
-gaps outer 5px
+gaps inner 10px
+gaps outer 10px
 
 #  Screenshots in files
 bindsym Ctrl+$mod+s exec --no-startup-id maim --format=png --select "/home/$USER/Pictures/Screenshots/screenshot-$(date -u +'%Y%m%d-%H%M%SZ').png"
