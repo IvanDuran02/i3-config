@@ -20,12 +20,21 @@ set $mod Mod1
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango: JetBrainsMono Nerd Font, DejaVu Sans Mono 8
 
+
+# Sets First and Second monitor
+set $fm DisplayPort-2
+set $sm DisplayPort-1
+# Display layout -- Set DisplayPort-2 Primary
+exec --no-startup-id xrandr --output DisplayPort-2 --primary --left-of DisplayPort-1 &
+
 # i3 Desktop background on startup
 # head 0 and head 1 being display 0 and 1 for dual monitors
 exec --no-startup-id nitrogen --set-scaled /home/popo/Pictures/bamboo_girl.jpg --head=0 && nitrogen --set-scaled /home/popo/Pictures/bamboo_girl.jpg --head=1
 
 # Start dunst for notifications on startup
-exec dunst
+exec --no-startup-id dunst
+
+exec --no-startup-id polybar -q polybar 
 
 exec pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2 
 # Startup picom to help with transparency in i3
@@ -144,7 +153,6 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
-
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -193,9 +201,9 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+#bar {
+#        status_command i3status
+#}
 
 # Settings to remove title bar in i3
 default_border pixel 0
@@ -209,4 +217,24 @@ gaps outer 10px
 bindsym Ctrl+$mod+s exec --no-startup-id maim --format=png --select "/home/$USER/Pictures/Screenshots/screenshot-$(date -u +'%Y%m%d-%H%M%SZ').png"
 # Screenshots selected area into clipboard
 bindsym Shift+$mod+S exec --no-startup-id maim --format=png --select | xclip -selection clipboard -t image/png
+
+workspace 1 output $fm
+workspace 2 output $fm
+workspace 3 output $fm
+workspace 4 output $fm
+workspace 5 output $fm
+workspace 6 output $sm
+workspace 7 output $sm
+workspace 8 output $sm
+workspace 9 output $sm
+# workspace 10 output $sm
+# workspace 11 output $sm
+# workspace 12 output $sm
+# workspace 13 output $sm
+# workspace 14 output $sm
+# workspace 15 output $sm
+# workspace 16 output $sm
+# workspace 17 output $sm
+# workspace 18 output $sm
+# workspace 19 output $sm
 
