@@ -29,7 +29,9 @@ exec --no-startup-id xrandr --output DisplayPort-2 --primary --left-of DisplayPo
 
 # i3 Desktop background on startup
 # head 0 and head 1 being display 0 and 1 for dual monitors
-exec --no-startup-id nitrogen --set-scaled /home/popo/Pictures/bamboo_girl.jpg --head=0 && nitrogen --set-scaled /home/popo/Pictures/bamboo_girl.jpg --head=1
+set $wallpaper-1 $HOME/Pictures/Wallpapers/Favorites/dragon_girl.jpg
+set $wallpaper-2 $HOME/Pictures/Wallpapers/Favorites/butterfly_girl.jpg
+exec --no-startup-id nitrogen --set-scaled $wallpaper-1 --head=0 && nitrogen --set-scaled $wallpaper-1 --head=1
 
 # Start dunst for notifications on startup
 exec --no-startup-id dunst
