@@ -112,7 +112,13 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+F fullscreen toggle
+
+# open firefox
+bindsym $mod+f exec --no-startup-id firefox &
+
+# open discord
+bindsym $mod+Shift+D exec --no-startup-id discord &
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
