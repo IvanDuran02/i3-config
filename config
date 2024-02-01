@@ -112,13 +112,14 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+Shift+F fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
-# open firefox
-bindsym $mod+f exec --no-startup-id firefox &
-
-# open discord
+# Keybinds to open applications
+bindsym $mod+Shift+F exec --no-startup-id firefox &
 bindsym $mod+Shift+D exec --no-startup-id discord &
+bindsym $mod+Shift+O exec --no-startup-id anki &
+bindsym $mod+Shift+P exec --no-startup-id pavucontrol &
+bindsym $mod+Shift+O exec --no-startup-id obs &
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
